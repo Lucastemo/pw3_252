@@ -27,6 +27,7 @@ function AuthContent() {
             <Route path="/user-prof" element={<UserProfileForm />} />
             <Route path="/add-cont"  element={<AddContactPage />} />
             <Route path="/chat/:id"  element={<Chat />} />
+            <Route path="/edit-cont/:id"  element={<AddContactPage />} />
           
     
          </Routes>

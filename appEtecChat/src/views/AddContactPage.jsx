@@ -1,12 +1,13 @@
-import { useState } from 'react';
-import { addDoc, collection, getDocs, query, where } from 'firebase/firestore';
+import { useEffect, useState } from 'react';
+import { addDoc, collection, doc, getDoc, getDocs, query, updateDoc, where } from 'firebase/firestore';
 import { db, auth } from '../firebase/config';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './UserProfilePage.css';
 import Header from '../components/Header';
 
 const AddContactPage = () => {
-  const pageTitle = "Adicionar Contato";
+  const { id } = useParams();
+  const pageTitle = id ? "Editar Contato" : "Adicionar Contato";
   const navigate = useNavigate();
   const [contactUserId, setContactUserId] = useState(null);
 
@@ -21,6 +22,20 @@ const AddContactPage = () => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
   const [userNotFound, setUserNotFound] = useState(false);
+
+  useEffect(() => {
+    if (id) {
+      const fetchContact = async () => {
+        const docRef = doc(db, 'contacts', id);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          setFormData(docSnap.data());
+        }
+      };
+  
+      fetchContact();
+    }
+  }, [id]);
 
   // Função para buscar o usuário pelo e-mail
   const fetchUserByEmail = async (email) => {
@@ -90,14 +105,23 @@ const AddContactPage = () => {
     try {
       setLoading(true);
 
-      // Adiciona o contato na coleção "contacts"
-      await addDoc(collection(db, 'contacts'), {
+      const contactData = {
         ...formData,
-        contactUserId: contactUserId || null, 
-        createdBy: auth.currentUser.uid, // Usuário autenticado que adicionou o contato
-        createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString()
-      });
+      };
+
+      if(id){
+        const contactRef = doc(db, 'contacts', id);
+        await updateDoc(contactRef, contactData);
+      }else{
+        // Adiciona o contato na coleção "contacts"
+        await addDoc(collection(db, 'contacts'), {
+          ...contactData,
+          contactUserId: contactUserId || null, 
+          createdBy: auth.currentUser.uid, // Usuário autenticado que adicionou o contato
+          createdAt: new Date().toISOString()
+        });
+      }
 
       setSuccess(true);
       setFormData({ email: '', fullName: '', photo: '', phone: '' });

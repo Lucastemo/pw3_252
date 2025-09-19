@@ -1,5 +1,6 @@
 import {auth} from '../firebase/config.js'
 import {useState} from 'react';
+import {useNavigate} from 'react-router-dom';
 import {  
          createUserWithEmailAndPassword         ,
          sendPasswordResetEmail,
@@ -15,6 +16,7 @@ function LoginPage() {
     const [loginType, setLoginType] = useState('login');
     const [userCredenciais, setUserCredenciais] = useState({})
     const [error , setError] = useState('')
+    const navigate = useNavigate();
 
     function handleCred(e){
         setUserCredenciais({...userCredenciais, [e.target.name]: e.target.value})
@@ -50,6 +52,7 @@ function LoginPage() {
             // Signed up 
             const user = userCredential.user;
             console.log(user)
+            navigate('/');
             // ...
         })
         .catch((error) => {
@@ -78,6 +81,7 @@ function LoginPage() {
 
             const user = result.user
             console.log (' Google login ok', user)
+            navigate('/');
 
         } catch(error){
             //const errorCode = error.code;
