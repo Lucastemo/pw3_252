@@ -1,5 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Saira&display=swap');
+
+*{
+  font-family: "Bungee", sans-serif;
+  font-weight: 400;
+  color: aliceblue;
+}
+
 #root {
-  max-width: 1280px;
+  width: 60%;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;

@@ -55,7 +55,7 @@ const ContactList = () => {
 
   return (
     <>
-      <Header pageTitle='👥 Lista'/>
+      <Header pageTitle='🤖 Lista de Contatos'/>
 
 	  <div className="contact-list">
         {users.length === 0 ? (
@@ -74,7 +74,7 @@ const ContactList = () => {
 
 		{/* Botão flutuante, aqui abaixo */}
 		<Link to="/add-cont">         <div className="floating-button">
-			<span>+</span>
+			{/* <span>+</span> */}
 			</div>
 		</Link>
 

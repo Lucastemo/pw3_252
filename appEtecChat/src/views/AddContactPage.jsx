@@ -145,7 +145,7 @@ const AddContactPage = () => {
         {userNotFound && <div className="user-profile-warning">Usuário não encontrado! Você pode editar os dados manualmente.</div>}
 
         <form onSubmit={handleSubmit} className="user-profile-form">
-          <label>Email</label>
+          <label className="over-input-label obligatory">Email</label>
           <input
             type="email"
             name="email"
@@ -154,7 +154,7 @@ const AddContactPage = () => {
             required
           />
 
-          <label>Nome Completo</label>
+          <label className="over-input-label obligatory">Nome Completo</label>
           <input
             type="text"
             name="fullName"
@@ -163,7 +163,7 @@ const AddContactPage = () => {
             required
           />
 
-          <label>Foto URL</label>
+          <label className="over-input-label">Foto URL</label>
           <input
             type="text"
             name="photo"
@@ -171,7 +171,7 @@ const AddContactPage = () => {
             onChange={handleChange}
           />
 
-          <label>Telefone</label>
+          <label className="over-input-label obligatory">Telefone</label>
           <input
             type="text"
             name="phone"

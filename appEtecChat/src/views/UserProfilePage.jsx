@@ -78,8 +78,8 @@ const UserProfileForm = () => {
 
   return (
     <>
+      <Header pageTitle={pageTitle} />
       <div className="user-profile-container">
-        <Header pageTitle={pageTitle} />
         <h2 className="text-2xl font-bold mb-6">Complete seu Perfil</h2>
 
         {error && <div className="user-profile-error">{error}</div>}
@@ -87,13 +87,13 @@ const UserProfileForm = () => {
         {success && <div className="user-profile-success">Dados salvos com sucesso!</div>}
 
         <form onSubmit={handleSubmit} className="user-profile-form">
-          <label>Nome Completo</label>
+          <label className="over-input-label">Nome Completo</label>
           <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} required />
 
-          <label>Foto URL</label>
+          <label className="over-input-label">Foto URL</label>
           <input type="text" name="photo" value={formData.photo} onChange={handleChange} required />
 
-          <label>Data de Nascimento</label>
+          <label className="over-input-label">Data de Nascimento</label>
           <input type="date" name="birthDate" value={formData.birthDate} onChange={handleChange} />
 
           <button type="submit">Salvar Dados</button>

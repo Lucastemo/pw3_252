@@ -115,11 +115,11 @@ function LoginPage() {
             </div>
             <form className="add-form login">
                   <div className="form-control">
-                      <label>E-mail *</label>
+                      <label className="over-input-label obligatory">E-mail</label>
                       <input onChange={(e)=>{handleCred(e)}}  type="text" name="email" placeholder="Informe seu email" />
                   </div>
                   <div className="form-control">
-                      <label>Senha *</label>
+                      <label className="over-input-label obligatory">Senha</label>
                       <input onChange={(e)=>{handleCred(e)}}  type="password" name="password" placeholder="Informe a senha" />
                   </div>
                   {

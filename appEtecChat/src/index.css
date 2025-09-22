@@ -7,7 +7,7 @@
   font-family: "Lora", sans-serif;
 }
 body {
-  background-color: #d0e2f2;
+  background-color: #14001F;
 }
 
 img {
@@ -27,7 +27,7 @@ img {
   position: absolute;
   width: 100%;
   height: 100vh;
-  background-color: white;
+  background-color: aliceblue;
   z-index: 999;
   display: flex;
   align-items: center;
@@ -126,7 +126,7 @@ input:focus {
 
 .btn {
   display: inline-block;
-  color: #fff;
+  color: aliceblue;
   border: none;
   padding: 10px 20px;
   margin: 5px;
@@ -156,10 +156,10 @@ input:focus {
   margin: auto;
   overflow: auto;
   min-height: 300px;
-  background-color: #faf8f2;
+  background-color: rgba(61, 38, 71, 0.1);
   padding: 30px;
   padding-top: 60px;
-  border-radius: 5px;
+  border-radius: 20px;
   position: relative;
   box-shadow: 0px 4px 11px 0px rgb(0 0 0 / 14%);
 }
@@ -181,14 +181,23 @@ input:focus {
 
 .container a.active button.btn,
 .container .btn.active    {
-  background: #1cab47;
-  color: #fff;
+  background: #647427;
+  color: aliceblue;
+}
+
+.container a.active button.btn,
+.container .btn.active:hover    {
+  background: #516110;
 }
 
 .container button.btn {
   margin-top: 0;
   background: #e3e3e3;
-  color: #000;
+  color: #14001F;
+}
+
+.container button.btn:hover {
+  background: #bbbbbb;
 }
 
 .container button.btn.transparent {
@@ -285,6 +294,17 @@ table tr th {
   margin-bottom: 24px;
 }
 
+.over-input-label{
+  text-align: left;
+  transform: translate(-10px, 10px);
+}
+
+.obligatory::after{
+  font-weight: bolder;
+  color: red;
+  content: " *";
+}
+
 .login-page .login-type {
   text-align: center;
 
@@ -303,20 +323,24 @@ table tr th {
 
 .login-page p.forgot-password {
   margin-top: 12px;
-  color: #0000EE;
+  color: cadetblue;
   text-decoration: underline;
   font-size: 14px;
   cursor: pointer;
 }
 
 .login-page.container button.btn.selected    {
-  background: #3e3e3e;
-  color: #fff;
+  background: #647427;
+  color: aliceblue;
+}
+
+.login-page.container button.btn.selected:hover    {
+  background: #516110;
 }
 
 .login-page.container button.btn.login    {
-  background: #3e3e3e;
-  color: #fff;
+  background: #09080a;
+  color: aliceblue;
 }
 
 .header {
@@ -338,8 +362,8 @@ table tr th {
 }
 
 .btn {
-  background-color: #f04e4e;
-  color: white;
+  background-color: #647427;
+  color: aliceblue;
   border: none;
   padding: 10px;
   border-radius: 5px;
@@ -347,7 +371,7 @@ table tr th {
 }
 
 .btn:hover {
-  background-color: #d94343;
+  background-color: #516110;
 }
 
 .floating-button {
@@ -356,9 +380,9 @@ table tr th {
   right: 20px;
   width: 60px;
   height: 60px;
-  background-color: #00ff5e; /* Azul ou a cor de sua preferência */
-  color: white;
-  border-radius: 50%;
+  background-color: #647427; /* Azul ou a cor de sua preferência */
+  color: aliceblue;
+  border-radius: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -367,9 +391,39 @@ table tr th {
   text-decoration: none;
   z-index: 1000;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
 }
 
 .floating-button:hover {
-  background-color: #00b339; /* Cor ao passar o mouse */
+  background-color: #516110; /* Cor ao passar o mouse */
+  width: 300px;
+}
+
+.floating-button::before{
+  content: "+";
+  left: 50%;
+  transform: translate(-50%);
+  position: absolute;
+  transition-timing-function: ease;
+  transition-duration: 0.5s;
+}
+
+.floating-button:hover::before{
+  transform: rotate(-180deg);
+  font-size: 20px;
+  left: 5%;
+}
+
+.floating-button::after{
+  content: "Adicionar Contato";
+  opacity: 0;
+  font-size: 20px;
+  transition: all 0.2s;
+  white-space: nowrap; 
+}
+
+.floating-button:hover::after{
+  opacity: 1;
+  transition: all 0.2s ease 0.35s;
 }

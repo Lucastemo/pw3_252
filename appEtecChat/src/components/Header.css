@@ -1,11 +1,23 @@
 .header {
-    background-color: #3db097;
+    background-color: #46185E;
     padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-radius: 15px 15px 0 0;
+    border: 5px solid #2d103d;
+    padding-bottom: 60px;
   }
   
+  .header h1{
+    position: absolute;
+    left: 50%;
+    width: 45vw;
+    transform: translate(-50%, 60px);
+    line-height: 60px;
+    border-top: 2px solid rgba(0, 0, 0, 0.2);
+  }
+
   .header-nav {
     display: flex;
   }

@@ -1,10 +1,14 @@
 .user-profile-container {
     max-width: 800px;
-    margin: 50px auto;
+    margin: 20px auto;
     padding: 30px;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .user-profile-container form input{
+    font-family: "Saira", sans-serif;
   }
   
   .user-profile-form label {
@@ -26,7 +30,7 @@
   }
   
   .user-profile-form button {
-    background-color: #007bff;
+    background-color: #647427;
     color: white;
     border: none;
     cursor: pointer;
@@ -35,7 +39,7 @@
   }
   
   .user-profile-form button:hover {
-    background-color: #0056b3;
+    background-color: #516110;
   }
   
   .user-profile-error {

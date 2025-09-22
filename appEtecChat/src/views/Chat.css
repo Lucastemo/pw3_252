@@ -5,6 +5,12 @@
     padding: 10px;
     overflow-y: auto;
   }
+
+  .chat-header{
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #46185E, rgba(0,0,0,0));
+    margin: 10px 0;
+    padding: 10px 0;
+  }
   
   .chat-messages {
     flex: 1;
@@ -21,16 +27,20 @@
     border-radius: 10px;
     word-wrap: break-word;
   }
+
+  .chat-message *, .contact-info *{
+    font-family: "Saira", sans-serif;
+  }
   
   .sent {
     align-self: flex-end;
-    background-color: #007bff;
-    color: white;
+    background-color: #46185E;
+    color: aliceblue;
   }
   
   .received {
     align-self: flex-start;
-    background-color: #e5e5e5;
+    background-color: #824F9E;
     color: black;
   }
   
@@ -51,7 +61,7 @@
     padding: 10px;
     border: none;
     background-color: #007bff;
-    color: white;
+    color: aliceblue;
     border-radius: 5px;
     cursor: pointer;
   }
