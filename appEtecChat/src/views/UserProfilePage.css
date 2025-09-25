@@ -38,7 +38,7 @@
     padding: 15px;
   }
   
-  .user-profile-form button:hover {
+  .user-profile-form button:hover, .user-profile-form button:active {
     background-color: #516110;
   }
   
@@ -89,4 +89,5 @@
     .user-profile-form button {
       font-size: 0.9em;
     }
+
   }

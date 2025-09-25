@@ -55,14 +55,19 @@
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ddd;
+    font-family: "Saira", sans-serif;
   }
   
   .chat-input button {
     padding: 10px;
     border: none;
-    background-color: #007bff;
+    background-color: #748826;
     color: aliceblue;
     border-radius: 5px;
     cursor: pointer;
+  }
+
+  .chat-input button:hover{
+    background-color: #516110;
   }
   

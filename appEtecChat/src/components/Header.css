@@ -16,6 +16,8 @@
     transform: translate(-50%, 60px);
     line-height: 60px;
     border-top: 2px solid rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+    text-align: center;
   }
 
   .header-nav {
@@ -44,4 +46,64 @@
   
   .header-user button {
     margin-left: 10px;
+  }
+
+  @media (max-width: 860px){
+    .header-user span{
+      width: 0;
+      opacity: 0;
+      font-size: 10px;
+      transition: 0 ease;
+      user-select: none;
+    }
+    
+    .header-user img{
+      width: 50px;
+      height: 50px;
+      transition: 0.2s ease;
+    }
+
+    .header-user img:active{
+      width: 30px;
+      height: 30px;
+    }
+
+    .header-user img:active ~ span{
+      width: 50px;
+      margin: 0 10px;
+      opacity: 1;
+      transition: 0.2s ease;
+    }
+  }
+
+  
+  @media (max-width: 860px){
+    .header h1{
+      width: 65vw;
+    }
+  }
+  
+  @media (max-width: 700px){
+    .header h1{
+      width: 80vw;
+    }
+  }
+  
+  @media (max-width: 480px){
+    .header h1{
+      font-size: 25px;
+    }
+  }
+
+  @media (max-width: 400px){
+    .header h1{
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 370px){
+    .header-user img:active{
+      width: 0;
+      height: 0;
+    }
   }

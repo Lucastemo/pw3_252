@@ -48,3 +48,16 @@
 .read-the-docs {
   color: #888;
 }
+
+@media (max-width: 860px){
+  #root{
+    width: 80%;
+  }
+}
+
+@media (max-width: 700px){
+  #root{
+    width: 100%;
+    padding: 10px;
+  }
+}

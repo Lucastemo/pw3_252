@@ -109,6 +109,7 @@ textarea {
 .form-control-check input {
   flex: 2;
   height: 20px;
+  font-family:
 }
 .form-control input[type="checkbox"] {
   width: auto;
@@ -141,7 +142,7 @@ input:focus {
   outline: none;
 }
 .btn:active {
-  transform: scale(0.98);
+  background-color: #516110;
 }
 .btn-block {
   display: block;
@@ -186,7 +187,7 @@ input:focus {
 }
 
 .container a.active button.btn,
-.container .btn.active:hover    {
+.container .btn.active:hover, .container .btn.active:active {
   background: #516110;
 }
 
@@ -296,7 +297,7 @@ table tr th {
 
 .over-input-label{
   text-align: left;
-  transform: translate(-10px, 10px);
+  transform: translate(-10px, 20px);
 }
 
 .obligatory::after{
@@ -327,6 +328,11 @@ table tr th {
   text-decoration: underline;
   font-size: 14px;
   cursor: pointer;
+  user-select: none;
+}
+
+.login-page p.forgot-password:hover, .login-page p.forgot-password:active {
+  color: #4a8486;
 }
 
 .login-page.container button.btn.selected    {
@@ -426,4 +432,26 @@ table tr th {
 .floating-button:hover::after{
   opacity: 1;
   transition: all 0.2s ease 0.35s;
+}
+
+@media(max-width: 800px){
+  .floating-button:active {
+    background-color: #516110; /* Cor ao passar o mouse */
+  }
+}
+
+@media(max-width: 700px){
+
+  .container{
+    width: 100%;
+    height: 95vh;
+  }
+
+  input:not([type="checkbox"]), textarea{
+    min-width: auto;
+  }
+
+  .login-page .add-form.login{
+    width: 100%;
+  }
 }

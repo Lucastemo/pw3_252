@@ -34,7 +34,7 @@ function Header({ pageTitle }) {
               <div style={{ display: 'flex', alignItems: 'center' }}>
                 <img
                   src={user.photoURL}
-                  alt={user.displayName}
+                  alt={user.displayName.split(" ")[0]}
                 />
                 <span>{user.displayName}</span>
               </div>
