@@ -99,6 +99,10 @@ textarea {
   display: block;
 }
 
+.form-control input{
+  font-family: "Saira", sans-serif;
+}
+
 .form-control-check {
   display: flex;
   align-items: center;
@@ -109,7 +113,6 @@ textarea {
 .form-control-check input {
   flex: 2;
   height: 20px;
-  font-family:
 }
 .form-control input[type="checkbox"] {
   width: auto;
